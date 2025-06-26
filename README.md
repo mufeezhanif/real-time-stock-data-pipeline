@@ -10,6 +10,9 @@ This project simulates a real-time stock market data pipeline using **Apache Kaf
 
 ---
 
+##Youtube Tutorial
+You can do this project by following the step-by-step tutorial
+[Youtube Video Link](https://youtu.be/KerNf0NANMo?si=uLcrGtjVxjrg_FWS)
 ## 🧩 Components Overview
 
 | Component         | Description                                                                 |
