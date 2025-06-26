@@ -61,8 +61,6 @@ real-time-stock-data-pipeline/
 ├── aws/
 │   ├── s3_bucket_setup.md
 │   ├── glue_crawler_config.md
-│   ├── athena_queries.sql
-│   └── boto3_s3_upload.py     # Optional boto3 upload
 ```
 
 ---
@@ -156,7 +154,7 @@ ORDER BY avg_price DESC;
 ## 👨‍💻 Author
 **Mohammad Mufeez**  
 BSc CS Student @ FAST NUCES | Data Engineering Enthusiast  
-[GitHub Profile](https://github.com/yourusername)
+[GitHub Profile](https://github.com/mufeezhanif)
 
 ---
 
