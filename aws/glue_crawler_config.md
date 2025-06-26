@@ -1,47 +1,48 @@
-🕷️ AWS Glue Crawler Configuration
+# 🕷️ AWS Glue Crawler Configuration
 
 Follow these steps to crawl your S3 stock data and make it queryable in Athena:
 
-Go to AWS Glue Console
+---
 
-https://console.aws.amazon.com/glue/
+## 🔗 Access AWS Glue Console
+- [Go to AWS Glue Console](https://console.aws.amazon.com/glue/)
 
-Create Database
+---
 
-Go to Databases → Add Database
+## 🗃️ Create Database
+1. Go to **Databases** → **Add Database**
+2. **Name**: `stock_data_db`
 
-Name: stock_data_db
+---
 
-Create a Crawler
+## 🛠️ Create a Crawler
+1. Go to **Crawlers** → **Add Crawler**
+2. **Name**: `stock_data_crawler`
+3. **Data Store**: `S3`
+4. **Path**: `s3://stock-data-bucket/streamed/`
+5. **Add another data store**: `No`
 
-Go to Crawlers → Add Crawler
+---
 
-Name: stock_data_crawler
+## 🔐 IAM Role
+- Use existing role with `AWSGlueServiceRole` permissions
+- Or create a new one during the setup
 
-Data Store: S3
+---
 
-Path: s3://stock-data-bucket/streamed/
+## 📥 Output
+- Choose the database: `stock_data_db`
+- Table name will be auto-generated from the dataset
 
-Add another data store: No
+---
 
-IAM Role
+## ▶️ Run the Crawler
+- After completing the setup, **run the crawler**
+- It will scan the provided S3 path and add the table to the Glue Catalog
 
-Use existing role with AWSGlueServiceRole permissions, or create a new one
+---
 
-Output
-
-Choose the database stock_data_db
-
-Table name will be auto-generated from data
-
-Run the Crawler
-
-After setup, run the crawler
-
-It will scan the S3 path and add the table to Glue Catalog
-
-Verify
-
-Go to Tables → check if table appears with correct schema
-
-You can now query this using Athena
+## ✅ Verify Table
+- Go to **Tables** in AWS Glue
+- Check if the table appears with correct schema
+- You can now query the data using **Amazon Athena**

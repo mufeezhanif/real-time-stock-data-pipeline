@@ -1,35 +1,47 @@
-
-
-🪣 S3 Bucket Setup Instructions
+# 🪣 S3 Bucket Setup Instructions
 
 Follow these steps to set up your Amazon S3 bucket for the real-time stock data pipeline:
 
-Log in to AWS Console
+---
 
-Go to https://console.aws.amazon.com/s3/
+## 🔗 Log in to AWS Console
+- [Go to AWS S3 Console](https://console.aws.amazon.com/s3/)
 
-Create a Bucket
+---
 
-Click Create bucket
+## 🪣 Create a Bucket
 
-Bucket name: stock-data-bucket (or a name of your choice)
+1. Click **Create bucket**
+2. **Bucket name**: `stock-data-bucket` *(or a name of your choice)*
+3. **Region**: Choose the same region as Glue/Athena (e.g., `us-east-1`)
 
-Region: Choose same region as Glue/Athena (e.g., us-east-1)
+---
 
-Uncheck Block All Public Access (optional)
+## 🔓 Public Access (Optional)
 
-For development/testing purposes only
+- Uncheck **Block All Public Access** *(only for development/testing)*
 
-Enable Versioning (optional)
+---
 
-Recommended for data tracking
+## 🗂️ Enable Versioning (Optional)
 
-Create the Bucket
+- Enable this to track object changes over time (recommended)
 
-Folder Structure (Optional)
+---
 
-Inside the bucket, create a folder such as /streamed/ where the consumer writes files
+## ✅ Finalize Bucket
 
-Permissions
+- Click **Create bucket** to finish setup
 
-Ensure the EC2 instance (or user uploading files) has PutObject permission
+---
+
+## 📁 Folder Structure (Optional)
+
+- Inside the bucket, create a folder: `/streamed/`
+  - This is where the Kafka consumer will write the data files
+
+---
+
+## 🔐 Permissions
+
+- Ensure the EC2 instance or IAM user that writes to S3 has the `PutObject` permission
